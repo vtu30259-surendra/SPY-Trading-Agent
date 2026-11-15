@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SPY Trading Agent - Indian Market</title>
+  <title>SPY Trading Agent - Learn Indian Stock Market</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -12,27 +12,38 @@
   <aside class="sidebar">
     <div class="brand">
       <span class="brand-mark">S</span>
-      <div><b>SPY Agent</b><small>INDIAN MARKET INTELLIGENCE</small></div>
+      <div>
+        <b>SPY Agent</b>
+        <small>LEARN · EXPLORE · PRACTICE</small>
+      </div>
     </div>
+
     <nav>
-      <a class="active" href="/">▦ &nbsp; Overview</a>
-      <a href="#markets">◷ &nbsp; Market watch</a>
-      <a href="#analysis">⌁ &nbsp; Analysis</a>
-      <a href="#paper">▤ &nbsp; Paper trading</a>
+      <a class="active" href="/">▦ &nbsp; Dashboard</a>
+      <a href="#markets">◷ &nbsp; Explore Stocks</a>
+      <a href="#analysis">⌁ &nbsp; Understand Analysis</a>
+      <a href="#paper">▤ &nbsp; Practice Trading</a>
+      <a href="#learning">📘 &nbsp; Learn Stock Market</a>
     </nav>
+
     <div class="side-note">
-      NSE stock monitoring and simulation<br>
-      <span>Not investment advice</span>
+      Your beginner-friendly stock market guide.
+      <br><span>Educational use only</span>
     </div>
   </aside>
 
   <main class="main">
+
     <header>
       <div>
-        <p class="eyebrow">INDIAN MARKET WORKSPACE</p>
+        <p class="eyebrow">WELCOME TO YOUR LEARNING SPACE</p>
         <h1>SPY Trading Agent</h1>
-        <p class="muted">Monitor Indian stocks, review indicators and practice simulated orders.</p>
+        <p class="muted">
+          Understand the Indian stock market step by step.
+          No previous stock market knowledge required!
+        </p>
       </div>
+
       <div class="header-right">
         <span class="status-dot"></span>
         NSE market data
@@ -40,48 +51,94 @@
       </div>
     </header>
 
+    <!-- BEGINNER WELCOME SECTION -->
     <section class="hero">
       <div>
-        <p class="eyebrow light">PRIMARY WATCHLIST</p>
-        <h2>RELIANCE <span>Reliance Industries Ltd.</span></h2>
-        <p>Track Indian stock prices and market movements.</p>
+        <p class="eyebrow light">YOUR STOCK MARKET JOURNEY STARTS HERE</p>
+        <h2>Learn the market. <br>Understand stocks. <br>Practice without risk.</h2>
+        <p>
+          Explore Indian companies, understand their share prices,
+          view charts and practise buying and selling with virtual money.
+        </p>
+        <a href="#markets" class="hero-link">Start Exploring Stocks ↓</a>
       </div>
+
       <div class="hero-price">
+        <span>Featured stock</span>
         <strong id="hero-price">—</strong>
         <span id="hero-change">Loading quote…</span>
+        <small>RELIANCE · INR</small>
       </div>
     </section>
 
+    <!-- HOW TO USE -->
+    <section class="panel beginner-guide">
+      <p class="eyebrow">NEW TO THE STOCK MARKET?</p>
+      <h3>How to use this application</h3>
+
+      <div class="grid guide-grid">
+        <div>
+          <span class="guide-number">01</span>
+          <h4>Explore a company</h4>
+          <p>Choose a company and see how much one share costs.</p>
+        </div>
+
+        <div>
+          <span class="guide-number">02</span>
+          <h4>Understand its price</h4>
+          <p>Check whether the share price increased or decreased.</p>
+        </div>
+
+        <div>
+          <span class="guide-number">03</span>
+          <h4>Learn from charts</h4>
+          <p>See how a company's share price changed over time.</p>
+        </div>
+
+        <div>
+          <span class="guide-number">04</span>
+          <h4>Practice trading</h4>
+          <p>Buy and sell using virtual money, not real money.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKET METRICS -->
     <section class="grid metrics" id="markets">
       <article class="panel">
-        <p class="muted">Last price</p>
+        <p class="muted">Latest available price</p>
         <h2 id="metric-price">—</h2>
-        <small>INR · selected NSE ticker</small>
+        <small>Price of one selected share in INR</small>
       </article>
+
       <article class="panel">
-        <p class="muted">Daily change</p>
+        <p class="muted">Daily price change</p>
         <h2 id="metric-change">—</h2>
-        <small>Compared with previous close</small>
+        <small>How much the price changed from the previous close</small>
       </article>
+
       <article class="panel">
-        <p class="muted">5-day average</p>
+        <p class="muted">5-day average price</p>
         <h2 id="metric-sma5">—</h2>
-        <small>Simple moving average</small>
+        <small>Average closing price over 5 trading days</small>
       </article>
+
       <article class="panel">
-        <p class="muted">20-day average</p>
+        <p class="muted">20-day average price</p>
         <h2 id="metric-sma20">—</h2>
-        <small>Simple moving average</small>
+        <small>Average closing price over 20 trading days</small>
       </article>
     </section>
 
+    <!-- CHART AND STOCK SEARCH -->
     <section class="grid content-grid">
       <article class="panel chart-panel">
         <div class="section-head">
           <div>
-            <p class="eyebrow">PRICE HISTORY</p>
+            <p class="eyebrow">UNDERSTAND PRICE MOVEMENT</p>
             <h3 id="chart-title">RELIANCE.NS performance</h3>
           </div>
+
           <select id="period">
             <option value="1mo">1 month</option>
             <option value="3mo">3 months</option>
@@ -89,28 +146,41 @@
             <option value="1y">1 year</option>
           </select>
         </div>
+
+        <p class="muted small">
+          This chart shows how the share's closing price changed over time.
+          It does not predict future prices.
+        </p>
+
         <canvas id="priceChart" height="105"></canvas>
+
         <p class="footnote" id="source-note">Loading data source…</p>
       </article>
 
       <article class="panel watch-panel">
         <div class="section-head">
           <div>
-            <p class="eyebrow">QUICK LOOKUP</p>
-            <h3>Indian market watch</h3>
+            <p class="eyebrow">FIND A COMPANY</p>
+            <h3>Explore Indian stocks</h3>
           </div>
         </div>
 
         <form id="ticker-form">
           <input id="ticker-input" value="RELIANCE.NS"
-                 maxlength="20" aria-label="NSE ticker symbol">
-          <button type="submit">Load</button>
+                 maxlength="20" aria-label="NSE ticker symbol"
+                 placeholder="Enter stock symbol">
+          <button type="submit">Search</button>
         </form>
 
+        <p class="muted small">
+          Enter an NSE company symbol, for example TCS.NS.
+        </p>
+
         <div id="quote-details" class="quote-details">Loading…</div>
+
         <div class="divider"></div>
 
-        <h4>Popular NSE stocks</h4>
+        <h4>Popular Indian companies</h4>
         <div class="stock-list">
           <button type="button" onclick="loadTicker('RELIANCE.NS')">RELIANCE</button>
           <button type="button" onclick="loadTicker('TCS.NS')">TCS</button>
@@ -120,80 +190,142 @@
         </div>
 
         <div class="divider"></div>
-        <h4>Indicator summary</h4>
+
+        <h4>What does the analysis mean?</h4>
         <p id="analysis-note" class="muted small">
-          Indicators are descriptive, not forecasts.
+          These indicators describe historical prices.
+          They do not guarantee what will happen next.
         </p>
       </article>
     </section>
 
+    <!-- PAPER TRADING -->
     <section class="grid lower-grid" id="paper">
       <article class="panel">
         <div class="section-head">
           <div>
-            <p class="eyebrow">RISK-FREE PRACTICE</p>
+            <p class="eyebrow">PRACTICE WITHOUT REAL MONEY</p>
             <h3>Paper trading</h3>
           </div>
           <span class="pill">SIMULATION ONLY</span>
         </div>
 
         <p class="muted small">
-          Place simulated NSE stock orders using the displayed quote.
-          No broker is connected and no real trades are placed.
+          Paper trading is a way to practise stock market buying
+          and selling using virtual money. No real money is involved.
         </p>
 
         <form id="order-form" class="order-form">
           <label>
-            Ticker
+            Company symbol
             <input id="order-ticker" value="RELIANCE.NS">
           </label>
+
           <label>
-            Side
+            What do you want to do?
             <select id="order-side">
               <option>BUY</option>
               <option>SELL</option>
             </select>
           </label>
+
           <label>
-            Quantity
+            Number of shares
             <input id="order-qty" type="number"
                    min="0.01" step="0.01" value="1">
           </label>
-          <button type="submit">Place paper order</button>
+
+          <button type="submit">Place practice order</button>
         </form>
+
+        <p class="muted small">
+          Example: Buying 1 share means practising the purchase
+          of one unit of that company's stock.
+        </p>
 
         <div id="order-message" class="small"></div>
         <div id="portfolio" class="portfolio"></div>
       </article>
 
       <article class="panel" id="analysis">
-        <p class="eyebrow">HOW TO READ THIS</p>
-        <h3>Market intelligence</h3>
+        <p class="eyebrow">LEARN TO READ THE MARKET</p>
+        <h3>Understand stock information</h3>
+
         <ul class="insight-list">
           <li>
-            <b>Price monitoring</b>
-            <span>View the latest available NSE quote and historical closes.</span>
+            <b>Share price</b>
+            <span>The amount you would pay for one share at the displayed quote.</span>
           </li>
+
           <li>
-            <b>Percentage change</b>
-            <span>Compare the latest close with the previous close.</span>
+            <b>Daily percentage change</b>
+            <span>Shows how much the price increased or decreased compared with the previous closing price.</span>
           </li>
+
           <li>
-            <b>Moving averages</b>
-            <span>Review historical averages, not future estimates.</span>
+            <b>5-day average</b>
+            <span>The average closing price across the last 5 trading days.</span>
           </li>
+
           <li>
-            <b>Paper trading</b>
-            <span>Practice order sizing without using real funds.</span>
+            <b>20-day average</b>
+            <span>The average closing price across the last 20 trading days.</span>
+          </li>
+
+          <li>
+            <b>Price chart</b>
+            <span>A visual history of how the stock price moved over a selected period.</span>
           </li>
         </ul>
       </article>
     </section>
 
+    <!-- LEARNING CORNER -->
+    <section class="panel learning-section" id="learning">
+      <p class="eyebrow">STOCK MARKET FOR BEGINNERS</p>
+      <h3>Learn the basics</h3>
+      <p class="muted">
+        Start with these simple concepts before exploring advanced analysis.
+      </p>
+
+      <div class="grid learning-grid">
+        <article>
+          <h4>What is a share?</h4>
+          <p>A share represents a small ownership unit in a company.</p>
+        </article>
+
+        <article>
+          <h4>What is NSE?</h4>
+          <p>The National Stock Exchange is a marketplace where securities are traded.</p>
+        </article>
+
+        <article>
+          <h4>What is a bull market?</h4>
+          <p>A market period in which prices are generally rising.</p>
+        </article>
+
+        <article>
+          <h4>What is a bear market?</h4>
+          <p>A market period in which prices are generally falling.</p>
+        </article>
+
+        <article>
+          <h4>What is a dividend?</h4>
+          <p>A portion of company profits distributed to eligible shareholders.</p>
+        </article>
+
+        <article>
+          <h4>What is risk?</h4>
+          <p>The possibility of losing some or all of the money invested.</p>
+        </article>
+      </div>
+    </section>
+
     <footer>
-      SPY Trading Agent · Educational use only ·
-      Indian market data may be delayed or unavailable.
+      SPY Trading Agent · Beginner learning platform ·
+      Educational use only. Market data may be delayed or unavailable.
     </footer>
+
   </main>
 
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
