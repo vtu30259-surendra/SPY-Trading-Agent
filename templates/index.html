@@ -92,7 +92,6 @@
       <h3>How to use this application</h3>
 
       <div class="grid guide-grid">
-
         <div>
           <span class="guide-number">01</span>
           <h4>Explore a company</h4>
@@ -116,7 +115,6 @@
           <h4>Practice trading</h4>
           <p>Buy and sell using virtual money, not real money.</p>
         </div>
-
       </div>
     </section>
 
@@ -175,26 +173,29 @@
         </p>
 
         <canvas id="priceChart" height="105"></canvas>
-<div class="chart-explanation">
-  <h4>How to read this chart</h4>
 
-  <ul class="insight-list">
-    <li>
-      <b>Horizontal axis (X-axis)</b>
-      <span>Shows the dates or time period selected.</span>
-    </li>
+        <!-- CHART EXPLANATION -->
+        <div class="chart-explanation">
+          <h4>How to read this chart</h4>
 
-    <li>
-      <b>Vertical axis (Y-axis)</b>
-      <span>Shows the stock's closing price in Indian Rupees (₹).</span>
-    </li>
+          <ul class="insight-list">
+            <li>
+              <b>Horizontal axis (X-axis)</b>
+              <span>Shows the dates or time period selected.</span>
+            </li>
 
-    <li>
-      <b>Chart line</b>
-      <span>Shows how the stock price increased or decreased over time.</span>
-    </li>
-  </ul>
-</div>
+            <li>
+              <b>Vertical axis (Y-axis)</b>
+              <span>Shows the stock's closing price in Indian Rupees (₹).</span>
+            </li>
+
+            <li>
+              <b>Chart line</b>
+              <span>Shows how the stock price increased or decreased over time.</span>
+            </li>
+          </ul>
+        </div>
+
         <p class="footnote" id="source-note">
           Loading data source…
         </p>
@@ -241,33 +242,39 @@
           <button type="button" onclick="loadTicker('HDFCBANK.NS')">HDFC BANK</button>
           <button type="button" onclick="loadTicker('WIPRO.NS')">WIPRO</button>
         </div>
-<div class="divider"></div>
 
-<h4>Understanding stock symbols</h4>
+        <div class="divider"></div>
 
-<p class="muted small">
-  Every company has a unique stock market symbol (ticker).
-  Here are some examples:
-</p>
+        <!-- STOCK SYMBOL EXPLANATION -->
+        <h4>Understanding stock symbols</h4>
 
-<ul class="insight-list">
-  <li>
-    <b>RELIANCE</b>
-    <span>Symbol for Reliance Industries.</span>
-  </li>
-  <li>
-    <b>TCS</b>
-    <span>Symbol for Tata Consultancy Services.</span>
-  </li>
-  <li>
-    <b>INFY</b>
-    <span>Symbol for Infosys.</span>
-  </li>
-  <li>
-    <b>.NS</b>
-    <span>Yahoo Finance suffix indicating an NSE-listed stock.</span>
-  </li>
-</ul>
+        <p class="muted small">
+          Every company has a unique stock market symbol (ticker).
+          Here are some examples:
+        </p>
+
+        <ul class="insight-list">
+          <li>
+            <b>RELIANCE</b>
+            <span>Symbol for Reliance Industries.</span>
+          </li>
+
+          <li>
+            <b>TCS</b>
+            <span>Symbol for Tata Consultancy Services.</span>
+          </li>
+
+          <li>
+            <b>INFY</b>
+            <span>Symbol for Infosys.</span>
+          </li>
+
+          <li>
+            <b>.NS</b>
+            <span>Yahoo Finance suffix indicating an NSE-listed stock.</span>
+          </li>
+        </ul>
+
         <div class="divider"></div>
 
         <h4>What does the analysis mean?</h4>
@@ -340,6 +347,43 @@
           Paper trading is a way to practise stock market buying
           and selling using virtual money. No real money is involved.
         </p>
+
+        <!-- NEW: PAPER TRADING EXPLANATION -->
+        <div class="chart-explanation">
+          <h4>Understanding your practice portfolio</h4>
+
+          <ul class="insight-list">
+            <li>
+              <b>Virtual cash</b>
+              <span>
+                Practice money available in your account.
+                It is not real money.
+              </span>
+            </li>
+
+            <li>
+              <b>Buying shares</b>
+              <span>
+                The purchase amount is deducted from your virtual cash.
+              </span>
+            </li>
+
+            <li>
+              <b>Selling shares</b>
+              <span>
+                The sale amount is added to your virtual cash.
+              </span>
+            </li>
+
+            <li>
+              <b>Profit or loss</b>
+              <span>
+                Shows whether your practice holdings have increased
+                or decreased in value.
+              </span>
+            </li>
+          </ul>
+        </div>
 
         <form id="order-form" class="order-form">
 
