@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
+
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
       <span class="brand-mark">S</span>
@@ -22,6 +25,7 @@
       <a class="active" href="/">▦ &nbsp; Dashboard</a>
       <a href="#markets">◷ &nbsp; Explore Stocks</a>
       <a href="#analysis">⌁ &nbsp; Understand Analysis</a>
+      <a href="#price-movements">📈 &nbsp; Price Movements</a>
       <a href="#paper">▤ &nbsp; Practice Trading</a>
       <a href="#learning">📘 &nbsp; Learn Stock Market</a>
     </nav>
@@ -32,8 +36,10 @@
     </div>
   </aside>
 
+  <!-- MAIN CONTENT -->
   <main class="main">
 
+    <!-- HEADER -->
     <header>
       <div>
         <p class="eyebrow">WELCOME TO YOUR LEARNING SPACE</p>
@@ -51,16 +57,25 @@
       </div>
     </header>
 
-    <!-- BEGINNER WELCOME SECTION -->
+    <!-- WELCOME SECTION -->
     <section class="hero">
       <div>
         <p class="eyebrow light">YOUR STOCK MARKET JOURNEY STARTS HERE</p>
-        <h2>Learn the market. <br>Understand stocks. <br>Practice without risk.</h2>
+
+        <h2>
+          Learn the market.
+          <br>Understand stocks.
+          <br>Practice without risk.
+        </h2>
+
         <p>
           Explore Indian companies, understand their share prices,
           view charts and practise buying and selling with virtual money.
         </p>
-        <a href="#markets" class="hero-link">Start Exploring Stocks ↓</a>
+
+        <a href="#markets" class="hero-link">
+          Start Exploring Stocks ↓
+        </a>
       </div>
 
       <div class="hero-price">
@@ -77,6 +92,7 @@
       <h3>How to use this application</h3>
 
       <div class="grid guide-grid">
+
         <div>
           <span class="guide-number">01</span>
           <h4>Explore a company</h4>
@@ -100,11 +116,13 @@
           <h4>Practice trading</h4>
           <p>Buy and sell using virtual money, not real money.</p>
         </div>
+
       </div>
     </section>
 
-    <!-- MARKET METRICS -->
+    <!-- STOCK METRICS -->
     <section class="grid metrics" id="markets">
+
       <article class="panel">
         <p class="muted">Latest available price</p>
         <h2 id="metric-price">—</h2>
@@ -128,11 +146,15 @@
         <h2 id="metric-sma20">—</h2>
         <small>Average closing price over 20 trading days</small>
       </article>
+
     </section>
 
     <!-- CHART AND STOCK SEARCH -->
     <section class="grid content-grid">
+
+      <!-- PRICE CHART -->
       <article class="panel chart-panel">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">UNDERSTAND PRICE MOVEMENT</p>
@@ -154,10 +176,15 @@
 
         <canvas id="priceChart" height="105"></canvas>
 
-        <p class="footnote" id="source-note">Loading data source…</p>
+        <p class="footnote" id="source-note">
+          Loading data source…
+        </p>
+
       </article>
 
+      <!-- STOCK SEARCH -->
       <article class="panel watch-panel">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">FIND A COMPANY</p>
@@ -166,9 +193,13 @@
         </div>
 
         <form id="ticker-form">
-          <input id="ticker-input" value="RELIANCE.NS"
-                 maxlength="20" aria-label="NSE ticker symbol"
-                 placeholder="Enter stock symbol">
+          <input
+            id="ticker-input"
+            value="RELIANCE.NS"
+            maxlength="20"
+            aria-label="NSE ticker symbol"
+            placeholder="Enter stock symbol"
+          >
           <button type="submit">Search</button>
         </form>
 
@@ -176,11 +207,14 @@
           Enter an NSE company symbol, for example TCS.NS.
         </p>
 
-        <div id="quote-details" class="quote-details">Loading…</div>
+        <div id="quote-details" class="quote-details">
+          Loading…
+        </div>
 
         <div class="divider"></div>
 
         <h4>Popular Indian companies</h4>
+
         <div class="stock-list">
           <button type="button" onclick="loadTicker('RELIANCE.NS')">RELIANCE</button>
           <button type="button" onclick="loadTicker('TCS.NS')">TCS</button>
@@ -192,21 +226,68 @@
         <div class="divider"></div>
 
         <h4>What does the analysis mean?</h4>
+
         <p id="analysis-note" class="muted small">
           These indicators describe historical prices.
           They do not guarantee what will happen next.
         </p>
+
       </article>
+    </section>
+
+    <!-- WHY STOCK PRICES CHANGE -->
+    <section class="panel learning-section" id="price-movements">
+
+      <p class="eyebrow">UNDERSTAND THE MARKET</p>
+
+      <h3>Why do stock prices change?</h3>
+
+      <p class="muted">
+        A stock price changes when buyers and sellers trade shares.
+        Demand, company performance and market conditions can influence its price.
+      </p>
+
+      <div class="grid learning-grid">
+
+        <article>
+          <h4>Why can prices rise? 📈</h4>
+          <p>
+            More people may want to buy a company's shares.
+            Positive company results or encouraging news may increase demand.
+          </p>
+        </article>
+
+        <article>
+          <h4>Why can prices fall? 📉</h4>
+          <p>
+            More people may want to sell shares.
+            Poor company results or negative news may reduce demand.
+          </p>
+        </article>
+
+        <article>
+          <h4>Remember this 💡</h4>
+          <p>
+            Stock prices can change for many reasons.
+            A price increase does not guarantee future profits,
+            and a decrease does not guarantee future losses.
+          </p>
+        </article>
+
+      </div>
     </section>
 
     <!-- PAPER TRADING -->
     <section class="grid lower-grid" id="paper">
+
       <article class="panel">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">PRACTICE WITHOUT REAL MONEY</p>
             <h3>Paper trading</h3>
           </div>
+
           <span class="pill">SIMULATION ONLY</span>
         </div>
 
@@ -216,6 +297,7 @@
         </p>
 
         <form id="order-form" class="order-form">
+
           <label>
             Company symbol
             <input id="order-ticker" value="RELIANCE.NS">
@@ -231,11 +313,17 @@
 
           <label>
             Number of shares
-            <input id="order-qty" type="number"
-                   min="0.01" step="0.01" value="1">
+            <input
+              id="order-qty"
+              type="number"
+              min="0.01"
+              step="0.01"
+              value="1"
+            >
           </label>
 
           <button type="submit">Place practice order</button>
+
         </form>
 
         <p class="muted small">
@@ -245,82 +333,117 @@
 
         <div id="order-message" class="small"></div>
         <div id="portfolio" class="portfolio"></div>
+
       </article>
 
+      <!-- STOCK ANALYSIS -->
       <article class="panel" id="analysis">
+
         <p class="eyebrow">LEARN TO READ THE MARKET</p>
         <h3>Understand stock information</h3>
 
         <ul class="insight-list">
+
           <li>
             <b>Share price</b>
-            <span>The amount you would pay for one share at the displayed quote.</span>
+            <span>
+              The amount you would pay for one share at the displayed quote.
+            </span>
           </li>
 
           <li>
             <b>Daily percentage change</b>
-            <span>Shows how much the price increased or decreased compared with the previous closing price.</span>
+            <span>
+              Shows how much the price increased or decreased compared
+              with the previous closing price.
+            </span>
           </li>
 
           <li>
             <b>5-day average</b>
-            <span>The average closing price across the last 5 trading days.</span>
+            <span>
+              The average closing price across the last 5 trading days.
+            </span>
           </li>
 
           <li>
             <b>20-day average</b>
-            <span>The average closing price across the last 20 trading days.</span>
+            <span>
+              The average closing price across the last 20 trading days.
+            </span>
           </li>
 
           <li>
             <b>Price chart</b>
-            <span>A visual history of how the stock price moved over a selected period.</span>
+            <span>
+              A visual history of how the stock price moved over a selected period.
+            </span>
           </li>
+
         </ul>
       </article>
+
     </section>
 
     <!-- LEARNING CORNER -->
     <section class="panel learning-section" id="learning">
+
       <p class="eyebrow">STOCK MARKET FOR BEGINNERS</p>
+
       <h3>Learn the basics</h3>
+
       <p class="muted">
         Start with these simple concepts before exploring advanced analysis.
       </p>
 
       <div class="grid learning-grid">
+
         <article>
           <h4>What is a share?</h4>
-          <p>A share represents a small ownership unit in a company.</p>
+          <p>
+            A share represents a small ownership unit in a company.
+          </p>
         </article>
 
         <article>
           <h4>What is NSE?</h4>
-          <p>The National Stock Exchange is a marketplace where securities are traded.</p>
+          <p>
+            The National Stock Exchange is a marketplace where securities are traded.
+          </p>
         </article>
 
         <article>
           <h4>What is a bull market?</h4>
-          <p>A market period in which prices are generally rising.</p>
+          <p>
+            A market period in which prices are generally rising.
+          </p>
         </article>
 
         <article>
           <h4>What is a bear market?</h4>
-          <p>A market period in which prices are generally falling.</p>
+          <p>
+            A market period in which prices are generally falling.
+          </p>
         </article>
 
         <article>
           <h4>What is a dividend?</h4>
-          <p>A portion of company profits distributed to eligible shareholders.</p>
+          <p>
+            A portion of company profits distributed to eligible shareholders.
+          </p>
         </article>
 
         <article>
           <h4>What is risk?</h4>
-          <p>The possibility of losing some or all of the money invested.</p>
+          <p>
+            The possibility of losing some or all of the money invested.
+          </p>
         </article>
+
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
       SPY Trading Agent · Beginner learning platform ·
       Educational use only. Market data may be delayed or unavailable.
@@ -329,5 +452,6 @@
   </main>
 
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 </body>
 </html>
